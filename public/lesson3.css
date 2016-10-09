@@ -1,0 +1,11 @@
+td {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border: #000000 2px solid;
+    font: 22px/10px "sans-serif";
+    color: #000000; }
+
+table {
+    border-collapse: collapse; }
