@@ -25,9 +25,10 @@ for (let i = 0; i < 12; i++){
 }
 
 function initLife() {
-    for (var i = 1; i < 11; i++) {
-        for (var j = 1; j < 11; j++) {
-            if ((j === 4) && (i === 4) || (j === 5)) {
+    for (var i = 0; i < 12; i++) {
+        for (var j = 0; j < 12; j++) {
+            if ((j === 4) && (i === 4) || (j === 4) && (i===5) || (j === 5) && (i === 4) || (j === 5) && (i === 3) ||
+                (j === 6) && (i === 3)) {
                 $('#' + i + j).css('background-color', '#06FF00');
                 lifePoints[i][j] = true;
             }
@@ -39,8 +40,8 @@ function initLife() {
 }
 
 function life() {
-    let newLife = lifePoints;
-    let counterNeig = 0;
+    var newLife = lifePoints;
+    var counterNeig = 0;
     for (var i = 1; i < 11; i++) {
         for (var j = 1; j < 11; j++) {
             if (lifePoints[i][j] === true) {
@@ -48,7 +49,13 @@ function life() {
                 if (lifePoints[i + 1][j] === true) counterNeig++;
                 if (lifePoints[i][j - 1] === true) counterNeig++;
                 if (lifePoints[i][j + 1] === true) counterNeig++;
-                if ((counterNeig < 2) || (counterNeig > 3)) newLife[i][j] = false;
+                if (lifePoints[i + 1][j + 1] === true) counterNeig++;
+                if (lifePoints[i + 1][j - 1] === true) counterNeig++;
+                if (lifePoints[i - 1][j + 1] === true) counterNeig++;
+                if (lifePoints[i - 1][j - 1] === true) counterNeig++;
+                if ((counterNeig == 2) || (counterNeig == 3)) {
+                    newLife[i][j] = true;
+                } else newLife[i][j] = false;
                 counterNeig = 0;
             }
         }

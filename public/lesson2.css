@@ -12,26 +12,21 @@ body {
     justify-content: space-around;
 }
 
+.circle {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 5rem;
+}
+
 #red {
-    display: flex;
     background-color: red;
-    height: 50px;
-    width: 50px;
-    border-radius: 5rem;
 }
 
 #yellow {
-    display: flex;
     background-color: yellow;
-    height: 50px;
-    width: 50px;
-    border-radius: 5rem;
 }
 
 #green {
-    display: flex;
     background-color: green;
-    height: 50px;
-    width: 50px;
-    border-radius: 5rem;
 }
