@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const template = require('consolidate');
+const favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
 app.engine('pug', template.pug);
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
